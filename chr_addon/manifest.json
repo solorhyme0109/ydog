@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "ydog",
+  "version": "0.0.1",
+  "description": "翻译插件",
+  "icons": { "128": "assets/img/ydog_logo.png" },
+  "background": {
+    "persistent": false,
+    "scripts": ["pages/event_page.js"]
+  },
+  "permissions": [
+    "activeTab",
+    "contextMenus",
+    "http://119.29.240.122:13512/"
+  ],
+  "browser_action": {
+    "default_title": "",
+    "default_icon": "assets/img/ydog_logo.png",
+    "default_popup": "pages/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["pages/content_script.js"]
+    }
+  ]
+}
