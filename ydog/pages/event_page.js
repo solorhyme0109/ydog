@@ -1,15 +1,16 @@
 const QUERY_URL = 'http://119.29.240.122:13512/api'
 
-chrome.runtime.onInstalled.addListener(function() {
+// chrome.runtime.onInstalled.addListener(function() {
   chrome.contextMenus.create({
     contexts: ['selection'],
     title: '查询: %s',
     id: 'ydog_selector',
   }, function(err) {
-  
+    console.log(err)
   })
 
   chrome.contextMenus.onClicked.addListener(function(info, tab) {
+    console.log(info)
     const {selectionText} = info
     const xhr = new XMLHttpRequest()
     xhr.open('get', `${QUERY_URL}?q=${selectionText}`)
@@ -31,7 +32,7 @@ chrome.runtime.onInstalled.addListener(function() {
 
     xhr.send()
   })
-})
+// })
 
 
 
