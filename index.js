@@ -50,8 +50,8 @@ router.get('/', staticMiddleware)
 
 app.use(router.routes())
 
-app.listen(8082, () => {
-  console.log('app listen at 8082')
+app.listen(process.env.YDOG_PORT, () => {
+  console.log(`Ydog is listening at: ${process.env.YDOG_PORT}`)
 })
 
 async function sign({ appkey, q, salt, secretKey }) {
