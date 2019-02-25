@@ -1,4 +1,4 @@
-const QUERY_URL = 'http://119.29.240.122:13512/api'
+const QUERY_URL = 'http://167.179.83.236:13512/api'
 
 // chrome.runtime.onInstalled.addListener(function() {
   chrome.contextMenus.create({
